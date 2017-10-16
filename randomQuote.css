@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+}
+h1{
+    color: blue;
+    font-family: 'Cinzel', serif;
+}
+#quote-text{
+ //font-family: 'Tangerine', cursive;
+ //   font-size: 2em;
+}
+html {
+  font-size: 12px;
+}
+
+@media (min-width: 576px)  {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}
