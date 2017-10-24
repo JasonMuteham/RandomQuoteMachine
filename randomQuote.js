@@ -60,7 +60,7 @@ function getQuote(){
 
 
 function twitter(){
-    debugger;
+
     var quoteHtml = document.getElementById("quote-text");
     var quoterHtml = document.getElementById("quoter");
     var tweetHtml = document.getElementById("tweet");
