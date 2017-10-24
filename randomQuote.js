@@ -34,6 +34,8 @@ function getQuote(){
     var quoteHtml = document.getElementById("quote-text");
     var quoterHtml = document.getElementById("quoter");
     var tweeterHtml = document.getElementById("tweeter");
+    document.getElementById("quotebutton").blur();
+
     var newQuote = ' ' + quote[random];
     //   debugger;
     while(newQuote === quoteHtml.innerHTML){
@@ -45,22 +47,32 @@ function getQuote(){
     var blockquoteHtml = document.getElementById("blockquote");
     blockquoteHtml.classList.remove('animated','zoomIn');  
     tweeterHtml.classList.remove('animated','shake');
+
     //timeout is important !!
     setTimeout(function(){ 
         blockquoteHtml.classList.add('animated','zoomIn');
-       
+
     }, 20);
+    if (tweetshakeID != undefined){
+        clearInterval(tweetshakeID);
+    }
 
-  setTimeout(function(){ 
+    var tweetshakeID = setInterval(function(){ 
+        tweeterHtml.classList.remove('animated','shake');
+        setTimeout(function(){ 
 
-        tweeterHtml.classList.add('animated','shake');
-    }, 1200);
+            tweeterHtml.classList.add('animated','shake');
+        }, 20);
+
+    }, 5000);
+
+
 }
 
 
 
 function twitter(){
-
+    document.getElementById("tweeter").blur();
     var quoteHtml = document.getElementById("quote-text");
     var quoterHtml = document.getElementById("quoter");
     var tweetHtml = document.getElementById("tweet");
