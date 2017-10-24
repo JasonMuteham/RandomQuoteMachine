@@ -33,7 +33,7 @@ function getQuote(){
     var random = Math.floor((Math.random() * (quote.length)));
     var quoteHtml = document.getElementById("quote-text");
     var quoterHtml = document.getElementById("quoter");
-    var tweetHtml = document.getElementById("tweet");
+    var tweeterHtml = document.getElementById("tweeter");
     var newQuote = ' ' + quote[random];
     //   debugger;
     while(newQuote === quoteHtml.innerHTML){
@@ -44,7 +44,7 @@ function getQuote(){
     quoterHtml.innerHTML = quoter[random];
     var blockquoteHtml = document.getElementById("blockquote");
     blockquoteHtml.classList.remove('animated','zoomIn');  
-    tweetHtml.classList.remove('animated','shake');
+    tweeterHtml.classList.remove('animated','shake');
     //timeout is important !!
     setTimeout(function(){ 
         blockquoteHtml.classList.add('animated','zoomIn');
@@ -53,13 +53,14 @@ function getQuote(){
 
   setTimeout(function(){ 
 
-        tweetHtml.classList.add('animated','shake');
+        tweeterHtml.classList.add('animated','shake');
     }, 1200);
 }
 
 
 
 function twitter(){
+    debugger;
     var quoteHtml = document.getElementById("quote-text");
     var quoterHtml = document.getElementById("quoter");
     var tweetHtml = document.getElementById("tweet");
