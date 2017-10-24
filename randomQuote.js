@@ -30,17 +30,38 @@ quoter.push("Marcus Aurelius");
 
 
 function getQuote(){
-    var random = Math.floor((Math.random() * (quote.length)))
+    var random = Math.floor((Math.random() * (quote.length)));
     var quoteHtml = document.getElementById("quote-text");
     var quoterHtml = document.getElementById("quoter");
-    quoteHtml.innerHTML = ' ' + quote[random];
+    var tweetHtml = document.getElementById("tweet");
+    var newQuote = ' ' + quote[random];
+    //   debugger;
+    while(newQuote === quoteHtml.innerHTML){
+        random = Math.floor((Math.random() * (quote.length)));         
+        newQuote = ' ' + quote[random];
+    }
+    quoteHtml.innerHTML = newQuote;
     quoterHtml.innerHTML = quoter[random];
-    
+    var blockquoteHtml = document.getElementById("blockquote");
+    blockquoteHtml.classList.remove('animated','zoomIn');  
+    tweetHtml.classList.remove('animated','shake');
+    //timeout is important !!
+    setTimeout(function(){ 
+        blockquoteHtml.classList.add('animated','zoomIn');
+       
+    }, 20);
+
+  setTimeout(function(){ 
+
+        tweetHtml.classList.add('animated','shake');
+    }, 1200);
 }
+
+
 
 function twitter(){
     var quoteHtml = document.getElementById("quote-text");
     var quoterHtml = document.getElementById("quoter");
-     var tweetHtml = document.getElementById("tweet");
+    var tweetHtml = document.getElementById("tweet");
     tweetHtml.href = 'https://twitter.com/intent/tweet?text=' + quoteHtml.innerHTML.trim() + ' - ' + quoterHtml.innerHTML;
 }

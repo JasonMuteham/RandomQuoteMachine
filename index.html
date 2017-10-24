@@ -7,6 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
+        
+         <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
         <link rel="stylesheet" href="randomQuote.css">
@@ -16,13 +20,13 @@
 
     </head>
     <body>
-        <div class="container">
+        <div class="container animated zoomIn">
             <div class="jumbotron mt-3"> 
-                <h1 class="mb-5 display-2">Quote Machine</h1>
+                <h1 class="mb-5 display-1">Quote Machine</h1>
 
                 <div class = "row">
-                    <div class = "col ml-2 mr-2 pt-5 pb-5 border border-info bg-success">
-                        <blockquote class="blockquote text-center ">
+                    <div id = "blockquote" class = "col ml-2 mr-2 pt-5 pb-5 border border-info bg-success">
+                        <blockquote  class="animated fadeIn blockquote text-center ">
                           
                            <i class="fa fa-quote-left fa-lg" aria-hidden="true"> </i><span id="quote-text" class="mb-0"> Click the quote button for a random quote, and the other button to tweet.</span>
                             <footer id="quoter" class="blockquote-footer text-light">Jason Muteham</footer>
@@ -33,12 +37,12 @@
 
                 <div class="row justify-content-center mt-5 mb-2">
                     <div class="col-auto ">
-                        <button onclick="getQuote()" class="btn btn-primary"><i class="fa fa-quote-left" aria-hidden="true"></i> Quote</button>
+                        <button onclick="getQuote()" class="animated pulse infinite btn btn-primary"><i class="fa fa-quote-left" aria-hidden="true"></i> Quote</button>
                     </div>
-                    <div class = "col-auto">
-                        <a id="tweet" class="twitter-share-button"
+                    <div id="tweet" class = "col-auto">
+                        <a  class="twitter-share-button"
                            href="https://twitter.com/intent/tweet" target="_blank">
-                            <button onclick="twitter()" class="btn btn-primary"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</button>
+                            <button id="tweet" onclick="twitter()" class="btn btn-primary"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</button>
                         </a>
 
                     </div>
@@ -49,8 +53,11 @@
 
 
         <!-- Optional JavaScript -->
+        
 
         <script src="randomQuote.js"></script>
+        
+    
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
