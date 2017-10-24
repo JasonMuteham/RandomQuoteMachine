@@ -1,5 +1,6 @@
 var quote = [];
 var quoter = [];
+var tweetshakeID = undefined;
 
 quote.push("Another quote, not a good one!");
 quoter.push("J P Muteham");
@@ -53,11 +54,12 @@ function getQuote(){
         blockquoteHtml.classList.add('animated','zoomIn');
 
     }, 20);
+ 
     if (tweetshakeID != undefined){
         clearInterval(tweetshakeID);
     }
 
-    var tweetshakeID = setInterval(function(){ 
+     tweetshakeID = setInterval(function(){ 
         tweeterHtml.classList.remove('animated','shake');
         setTimeout(function(){ 
 
